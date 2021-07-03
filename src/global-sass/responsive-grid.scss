@@ -1,0 +1,9 @@
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col-md-6 {
+    @media(max-width: 576px) { width: 100%; }
+    @media(min-width: 800px) { width: 50%; }
+}
