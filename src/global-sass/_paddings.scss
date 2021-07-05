@@ -1,0 +1,55 @@
+.pt-50 {
+    padding-top: 50px;
+}
+
+.py-20 {
+    padding: 20px 0;
+}
+
+.py-30 {
+    padding: 30px 0;
+}
+
+.py-40 {
+    padding: 40px 0;
+}
+
+.py-50 {
+    padding: 50px 0;
+}
+
+.py-60 {
+    padding: 60px 0;
+}
+
+.py-70 {
+    padding: 5em 0;
+}
+
+.py-80 {
+    padding: 8em 0;
+}
+
+.py-sm-30 {
+    @media(max-width: 576px) { padding: 30px 0; }
+} // 30px padding on small screens
+
+.py-md-30 {
+    @media(min-width: 576px) { padding: 30px 0; }
+}
+
+.py-sm-40 {
+    @media(max-width: 576px) { padding: 40px 0; }
+}
+
+.py-md-40 {
+    @media(min-width: 576px) { padding: 40px 0; }
+}
+
+.py-sm-50 {
+    @media(max-width: 576px) { padding: 50px 0; }
+}
+
+.py-md-50 {
+    @media(min-width: 576px) { padding: 50px 0; }
+}

@@ -1,0 +1,12 @@
+.cta__main {
+    background-color: black;
+    color: white;
+    padding: 0 30px;
+    border: 0;
+    border-radius: 3px;
+    @media(min-width: 250px) { height: 60px; font-size: 20px; }
+    @media(min-width: 600px) { height: 45px; font-size: 17px; }
+    font-family: "Catamaran";
+    font-weight: 200;
+    letter-spacing: 2px;   
+}

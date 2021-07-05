@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@200;400;600;900&display=swap');
+
+body {
+    font-family: "Catamaran", sans-serif;
+}
+
+//Head 1
+.head-1 {
+    font-weight: 900;
+    letter-spacing: -2.5px;
+    @media(min-width: 250px) { font-size: 38px; line-height: 48px; }
+    @media(min-width: 576px) { font-size: 42px; line-height: 52px; }
+    @media(min-width: 800px) { font-size: 48px; line-height: 58px; }
+    color: #1c1b20;
+}
+
+//Head 2
+.head-2 {
+    font-weight: 900;
+    letter-spacing: -2.5px;
+    @media(min-width: 250px) { font-size: 32px; line-height: 48px; }
+    @media(min-width: 576px) { font-size: 36px; line-height: 52px; }
+    @media(min-width: 800px) { font-size: 42px; line-height: 58px; }
+}
+
+//Card title
+.card__title {
+    font-weight: 600;
+    letter-spacing: -1.5px;
+    @media(min-width: 250px) { font-size: 25px; }
+    @media(min-width: 576px) { font-size: 28px; }
+    @media(min-width: 800px) { font-size: 32px; }
+}
+
+//Body - Black
+.body-black {
+    @media(min-width: 250px) { font-size: 18px; }
+    @media(min-width: 600px) { font-size: 19px; }
+}
+
+//Body - Grey
+.body-grey {
+    @media(min-width: 250px) { font-size: 18px; }
+    @media(min-width: 600px) { font-size: 19px; }
+    color: #606060;
+}
+
+//Body - White
+.body-white {
+    @media(min-width: 250px) { font-size: 18px; }
+    @media(min-width: 600px) { font-size: 19px; }
+    color: white;
+}
+
+//Highlight
+.highlight {
+    background: linear-gradient(#FFD362, #FFD362) no-repeat;
+    background-size: 100% 30%;
+    background-position: 0% 70%;
+}
+
+//Link 
+.link {
+    display: inline-block;
+    color: black;
+    border-bottom: 1px solid;
+    margin: 10px 0;
+    letter-spacing: 1px;
+    font-size: 19px;
+    @media(min-width: 250px) { float: left; }
+    @media(min-width: 800px) { float: right; }
+}
