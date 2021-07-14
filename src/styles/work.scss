@@ -35,13 +35,14 @@
 
 }
 
-#zoomin {
+.zoomin {
     background-image: url('../assets/banner.jpg');
     background-size: cover;
     background-position: center;
 }
 
 .work {
+    opacity: 0;
     .head-1 span { display: inline-block; transform: translateY(100%); opacity: 0; background-size: 0% 40%; }
     .body-black { transform: translateY(100%); opacity: 0; }
     .card { opacity: 0; }

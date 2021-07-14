@@ -1,3 +1,5 @@
+.home { opacity: 0; }
+
 .banner {
     height: 100vh;
 
@@ -46,10 +48,15 @@
         opacity: 0;
     }
 
+    .link {
+        float: left;
+    }
+
     svg { opacity: 0; }
 }
 
 .pitch {
+
     .head-1 {
         overflow: hidden;
         span {
@@ -71,6 +78,7 @@
 }
 
 .services {
+
     .head-1 {
         overflow: hidden;
         span {

@@ -1,0 +1,13 @@
+.contact {
+    height: 100vh;
+    background-color: #FFD362;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
+
+    .fluid-container {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+    }
+}

@@ -1,4 +1,7 @@
 import React, { useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
+import { Cursor } from '../animations/Cursor';
+import { RouteTransitions } from '../animations/RouteTransitions';
 import { WorkAnim } from '../animations/Work';
 import '../styles/work.scss';
 
@@ -6,7 +9,15 @@ const Work = () => {
 
     useEffect(() => {
         new WorkAnim().intro()
+        new Cursor().initializeTargets()
     }, []);
+
+    let history = useHistory()
+    var transitions = new RouteTransitions()
+
+    function routeTo(route) {
+        transitions.exitTransition('work', () => history.push(`/projects/${route}`))
+    }
 
     return (
         <div className="work pt-50">
@@ -18,11 +29,11 @@ const Work = () => {
                 </div>
 
                 <div className="card-container">
-                    <div className="card" id='zoomin'>
+                    <div className="card zoomin">
                         <div className="card__content">
                             <div className="card__title">Zoomin</div>
                             <div className="body-white">Helping a talented photographer showcase her skill to the world.</div>
-                            <span className="link">LEARN MORE</span>
+                            <span className="link target" onClick={() => routeTo('zoomin')}>LEARN MORE</span>
                         </div>
                     </div>
                 </div>

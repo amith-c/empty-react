@@ -1,34 +1,46 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { HomeAnim } from '../animations/Home';
 import '../styles/home.scss';
 import uidesign from '../assets/uidesign.svg';
 import webdev from '../assets/webdev.svg';
 import redesign from '../assets/redesign.svg';
+import { useHistory } from 'react-router-dom';
+import { Cursor } from '../animations/Cursor';
+import { RouteTransitions } from '../animations/RouteTransitions';
 
 const Home = () => {
 
+    const history = useHistory()
+
     useEffect(() => {
+        window.scrollTo(0, 0)
         new HomeAnim().intro()
+        new Cursor().initializeTargets()
     }, []);
+
+    function routeTo(route) {
+        new RouteTransitions()
+        .exitTransition('home', () => history.push(route))
+    }
 
     return (
         <div className="home pt-50">
             <div className="banner">
                 <div className="fluid-container">
-                    <div className="row">
-                        <div className="col-md-6 banner__title">
+                    <div className="row-2" style={{columnFill: 'balance'}}>
+                        <div className="banner__title">
                             <div className="head-1">
                                 <div className="line"><span>I'm Amith</span></div>
-                                <div className="line"><span className='highlight'>designer, developer</span></div>
+                                <div className="line"><span><span className='highlight'>designer, developer</span></span></div>
                             </div>
 
                             <div className="body-grey">
                                 I help businesses reach new heights with a visually pleasing, as well as high-performing websites.
                             </div>
 
-                            <button className="cta__main">LET'S CHAT</button>
+                            <button className="cta__main target" onClick={() => routeTo('/contact')}>LET'S CHAT</button>
                         </div>
-                        <div className="col-md-6 text-align-center">
+                        <div className="text-align-center">
                             <svg width="404" height="379" viewBox="0 0 404 379" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M212.159 1.31849C251.675 4.09002 288.771 17.0067 321.415 38.5034C354.793 60.4841 386.857 87.3412 398.979 124.347C411.041 161.166 399.197 200.058 386.316 236.623C373.572 272.799 356.104 307.356 325.775 332.15C293.631 358.427 254.427 379.404 212.159 378.994C170.093 378.587 135.323 352.131 100.202 329.964C63.2371 306.634 16.9292 287.74 3.5604 247.335C-9.78879 206.988 17.5992 166.403 32.9537 126.715C47.5937 88.8748 56.5862 46.1287 90.6173 22.3159C124.687 -1.52378 170.071 -1.63348 212.159 1.31849Z" fill="#FFD362" />
                                 <g clip-path="url(#clip0)">
@@ -172,11 +184,12 @@ const Home = () => {
                 <div className="fluid-container">
                     <div className="head-1"><span>a little <span className="highlight">about me...</span></span></div>
 
-                    <div className="row">
+                    <div className="row-2 py-50">
                         <div className="col-md-6 py-sm-30">
                             <div className="body-grey">
-                                I am a teenager, very keen to use his design skills to build creative digital experiences for businesses, keeping them ahead of competition while generating leads.
+                                I am a teen web designer and I'm very keen to use my design skills to build creative digital experiences for businesses, keeping them ahead of competition while generating leads and improving their online footprint.
                             </div>
+                            <span className="link target" onClick={() => routeTo('/work')}>MY WORK</span>
                         </div>
                         <div className="col-md-6 text-align-center   ">
                             <svg width="350" height="187" viewBox="0 0 350 187" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -237,7 +250,7 @@ const Home = () => {
 
             <div className="pitch py-70">
                 <div className="fluid-container">
-                    <div className="row">
+                    <div className="row-2">
                         <div className="col-md-6">
                             <div className="head-1"><span>your business needs <br /><span className="highlight">a website</span></span></div>
                         </div>
@@ -246,7 +259,7 @@ const Home = () => {
                                 Why? Because in this era, having a website makes your business look superior to your competitors, and your presence is taken to a global level with global audience. <br />
 
                                 A perfect website ensures that you look like an expert in your field and you’ll gain more trust from your audience. <br />
-                                <span className="link">MY WORK PROCESS</span>
+                                <span className="link target">MY WORK PROCESS</span>
                             </div>
                         </div>
                     </div>
@@ -257,9 +270,9 @@ const Home = () => {
                 <div className="fluid-container">
                     <div className="head-1"><span>my <span className="highlight">services</span></span></div>
 
-                    <div className="row py-60">
+                    <div className="row-3 py-70">
                         <div className="col-md-4">
-                            <div className="services__card py-sm-50">
+                            <div className="services__card py-md-50">
 
                                 <img className='card__img' src={uidesign} alt="" />
                                 <div className="card__title py-20">ui/ux design</div>
@@ -269,7 +282,7 @@ const Home = () => {
                             </div>
                         </div>
                         <div className="col-md-4">
-                            <div className="services__card py-sm-50">
+                            <div className="services__card py-md-50">
                                 <img src={webdev} alt="" className="card__img" />
                                 <div className="card__title py-20">web development</div>
                                 <div className="card__content body-grey">
@@ -278,7 +291,7 @@ const Home = () => {
                             </div>
                         </div>
                         <div className="col-md-4">
-                            <div className="services__card py-sm-50">
+                            <div className="services__card py-md-50">
                                 <img src={redesign} alt="" className="card__img" />
                                 <div className="card__title py-20">website redesign</div>
                                 <div className="card__content body-grey">
@@ -292,10 +305,11 @@ const Home = () => {
             </div>
 
             <div className="home__contact bg-primary">
-                <div className="fluid-container">
+                <div className="fluid-container text-align-center">
                             <div className="head-2">do you have a project <br /> to discuss?</div>
-                            Let's get started right away! Drop a line in my inbox, or contact me on my socials. <br />
-                            <button className="cta__main">I'M HERE!</button>
+                            <div className="body-black">
+                            Let's get started right away! Drop a line in my inbox, or contact me on my socials.</div> <br />
+                            <button className="cta__main target" onClick={() => routeTo('/contact')}>I'M HERE!</button>
                         
                 </div>
             </div>
